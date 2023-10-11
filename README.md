@@ -1,2 +1,8 @@
 #### Balance_tracker
-A balance tracker that helps you track how much money you spent and saved in a week/month and how much money you need to buy something you want.
+
+A balance tracker that helps you tracking your spendings and savings.
+
+## What can you do with it?
+
+With the balance tracker, you can keep track of how much money you have spent. 
+You can keep track of your weekly spendings/savings as well as your monthly spendings/savings.
