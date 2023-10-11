@@ -35,13 +35,13 @@
 
     @Override
     public String toString() {
-        return "Balance [bankBalance=" + bankBalance + ", spentMonth=" + spentMonth + ", spentWeek=" + spentWeek
-                + ", savedMonth=" + savedMonth + ", savedWeek=" + savedWeek + ", moneyNeeded=" + moneyNeeded
-                + ", reader=" + reader + "]";
+        return "";
     }
 
     public Balance(){
 
+        bankBalance = 150.00;
+        System.out.println(bankBalance);
         moneyINeed();
 
     }
@@ -81,14 +81,12 @@
             price = userInput().nextDouble();
             System.out.println(object + " costs "+ price+ ".\n");
 
-            //canIBuy=(price < bankBalance)?true:false;
 
             if (price <= bankBalance){
-                //canIBuy = true;
                 System.out.println("You can buy it");
             }
             else{
-                moneyNeeded = 24.00;
+                moneyNeeded = price - bankBalance;
                 System.out.println("You need "+moneyNeeded+"EUR.");
             }
 
