@@ -28,14 +28,14 @@
     public static void main(String[] args){
 
         System.out.println("Hello World");
-        //balance b1 = new balance();
-        //System.out.println(b1);
+        Balance b1 = new Balance();
+        System.out.println(b1);
         
     }
 
     public Balance(){
 
-
+        moneyINeed();
 
     }
 
@@ -46,9 +46,16 @@
 
     public void bankBalance(){
 
+        /*
+         * 
+         * TODO:
+         * -decreasing bankBalance after a week (bankBalance - spentWeek)
+         * -setting bankBalance to 150.00 after a month
+         * 
+         */
+
         bankBalance = 150.00;
         System.out.println(bankBalance);
-        moneyINeed();
     }
 
 
@@ -56,14 +63,22 @@
             String object;
             double price;
             boolean canIBuy;
-            String input1;
-            double input2;
 
 
 
             System.out.println("What do u wanna buy?");
-            input1 = userInput().nextLine();
-            System.out.println("You wanna buy: "+ input1+ ".");
+            object = userInput().nextLine();
+            System.out.println("You wanna buy: "+ object+ ".\n");
+
+            System.out.println("How much does it cost? ");
+            price = userInput().nextDouble();
+            System.out.println(object + " costs "+ price+ ".\n");
+
+            boolean result=(price < bankBalance)?true:false;
+
+            if (result = true){
+                System.out.println("You can buy it");
+            }
 
             
 
