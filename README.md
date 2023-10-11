@@ -10,5 +10,5 @@ Btw I hate markdown
 With the balance tracker, you can keep track of how much money you have spent. 
 You can keep track of:
 
-*your weekly spendings/savings
-*your monthly spendings/savings
+* your weekly spendings/savings
+* your monthly spendings/savings
