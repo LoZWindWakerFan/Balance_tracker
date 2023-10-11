@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date</title>
+</head>
+<body>
+    <p id="date"></p>
+
+    <script>
+        var today = new Date();
+        var date = today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear();
+        document.getElementById('date').innerHTML = date;
+    </script>
+</body>
+</html>
