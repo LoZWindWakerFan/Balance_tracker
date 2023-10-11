@@ -33,6 +33,13 @@
         
     }
 
+    @Override
+    public String toString() {
+        return "Balance [bankBalance=" + bankBalance + ", spentMonth=" + spentMonth + ", spentWeek=" + spentWeek
+                + ", savedMonth=" + savedMonth + ", savedWeek=" + savedWeek + ", moneyNeeded=" + moneyNeeded
+                + ", reader=" + reader + "]";
+    }
+
     public Balance(){
 
         moneyINeed();
@@ -62,7 +69,7 @@
     public void moneyINeed(){
             String object;
             double price;
-            boolean canIBuy;
+            //boolean canIBuy;
 
 
 
@@ -74,10 +81,15 @@
             price = userInput().nextDouble();
             System.out.println(object + " costs "+ price+ ".\n");
 
-            boolean result=(price < bankBalance)?true:false;
+            //canIBuy=(price < bankBalance)?true:false;
 
-            if (result = true){
+            if (price <= bankBalance){
+                //canIBuy = true;
                 System.out.println("You can buy it");
+            }
+            else{
+                moneyNeeded = 24.00;
+                System.out.println("You need "+moneyNeeded+"EUR.");
             }
 
             
