@@ -12,3 +12,4 @@ You can keep track of:
 
 * your weekly spendings/savings
 * your monthly spendings/savings
+* how much money you need to buy something you want
