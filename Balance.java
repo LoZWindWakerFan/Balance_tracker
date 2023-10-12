@@ -13,7 +13,8 @@
  * Money I need to save up for something
  */
 
- import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Scanner;
 
  public class Balance{
 
@@ -27,10 +28,22 @@
 
     public static void main(String[] args){
 
-        System.out.println("Hello World");
-        Balance b1 = new Balance();
-        System.out.println(b1);
-        
+        //System.out.println("Hello World");
+        //Balance b1 = new Balance();
+        //System.out.println(b1);
+
+        System.out.println("~~~Balance tracker~~~");
+        System.out.println("What do you wanna do? [H]elp | [B]alance after month");
+
+        /*
+         * 
+         * FIXME:
+         *-cannot make a static reference to a non-static mehtod on line 45 
+         */
+
+        switch(userInput().nextLine().toLowerCase()){
+
+        }
     }
 
     @Override
@@ -43,6 +56,10 @@
         bankBalance = 150.00;
         System.out.println(bankBalance);
         moneyINeed();
+        System.out.println(bankBalance);
+
+        moneyInMonth();
+
 
     }
 
@@ -71,6 +88,13 @@
             double price;
             //boolean canIBuy;
 
+            /*
+             * 
+             * ~~~POS extra lesson notes~~~
+             * -&& = and
+             * - 1 != 2 = 1 is not 2
+             * 
+             */
 
 
             System.out.println("What do u wanna buy?");
@@ -84,16 +108,38 @@
 
             if (price <= bankBalance){
                 System.out.println("You can buy it");
+                System.out.println("Your current bank balance is: "+(bankBalance - price)+" EUR.");
             }
             else{
                 moneyNeeded = price - bankBalance;
                 System.out.println("You need "+moneyNeeded+"EUR.");
             }
+    }
 
-            
+    public void moneyInMonth(){
+        //NOTE: in java.util.Date, January is the month 0!!! 
+        //that means that: september = 8, october = 9, november = 10, december = 11 
 
+        java.util.Date date= new java.util.Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int month = cal.get(Calendar.MONTH);
 
+        System.out.println(month);
+    }
 
+    public void helpMenu(){
+        int version = 000101;
+
+        System.out.println("Hello! Welcome to the Balance tracker help menu! How can I help ou today?");
+        System.out.println("[V]ersion | [C]ommands");
+
+        switch (userInput().nextLine().toLowerCase()){
+
+            case "V":
+                System.out.println("The current version of the program is: " + version);
+                break;
+        }
     }
     
 
