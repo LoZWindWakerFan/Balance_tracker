@@ -35,15 +35,20 @@ import java.util.Scanner;
         System.out.println("~~~Balance tracker~~~");
         System.out.println("What do you wanna do? [H]elp | [B]alance after month");
 
-        /*
-         * 
-         * FIXME:
-         *-cannot make a static reference to a non-static mehtod on line 45 
-         */
+        Scanner hauptScanner = new Scanner(System.in);
+        switch (hauptScanner.nextLine().toLowerCase()){
 
-        switch(userInput().nextLine().toLowerCase()){
+            case "H":
 
+            /*
+             * FIXME:
+             * 
+             * -cannot make static reference to non-static java solution on line 48
+             */
+                helpMenu();
+                break;
         }
+        
     }
 
     @Override
