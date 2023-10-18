@@ -24,30 +24,22 @@ import java.util.Scanner;
     private double savedMonth;
     private double savedWeek;
     private double moneyNeeded;
-    Scanner reader;
+    private Scanner reader;
 
     public static void main(String[] args){
 
-        //System.out.println("Hello World");
-        //Balance b1 = new Balance();
-        //System.out.println(b1);
-
         System.out.println("~~~Balance tracker~~~");
-        System.out.println("What do you wanna do? [H]elp | [B]alance after month");
+        System.out.println("What do you wanna do? [H]elp | [M]onth balance");
+        Balance b1 = new Balance();
 
-        Scanner hauptScanner = new Scanner(System.in);
-        switch (hauptScanner.nextLine().toLowerCase()){
+        /*
+         * 
+         * FIX OF CANNOT MAKE A STATIC REFERENCE TO A NON-STATIC METHOD:
+         * 
+         * just make an instance of the class an call the non-static method that way
+         */
 
-            case "H":
-
-            /*
-             * FIXME:
-             * 
-             * -cannot make static reference to non-static java solution on line 48
-             */
-                helpMenu();
-                break;
-        }
+        b1.switchMenu();
         
     }
 
@@ -56,14 +48,27 @@ import java.util.Scanner;
         return "";
     }
 
+    public void switchMenu(){
+
+
+        Scanner hauptScanner = new Scanner(System.in);
+        switch (hauptScanner.next().toLowerCase()){
+
+            case "H":
+                helpMenu();   
+                break;
+            
+            case "M":
+                moneyInMonth();
+                break;
+        }
+
+        hauptScanner.close();                        //if u don't close the scanner u'll get the rescource leak error
+    }
+
     public Balance(){
 
-        bankBalance = 150.00;
-        System.out.println(bankBalance);
-        moneyINeed();
-        System.out.println(bankBalance);
-
-        moneyInMonth();
+        switchMenu();
 
 
     }
