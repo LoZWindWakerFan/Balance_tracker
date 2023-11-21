@@ -9,8 +9,7 @@
  * -Money I saved in a month
  * -Money I spent in a week
  * -Money I saved in a week
- * 
- * Money I need to save up for something
+ * -Money I need to save up for something(FINISHED)
  */
 
 import java.util.Calendar;
@@ -32,49 +31,45 @@ import java.util.Scanner;
         System.out.println("What do you wanna do? [H]elp | [M]onth balance");
         Balance b1 = new Balance();
 
-        /*
-         * 
-         * FIX OF CANNOT MAKE A STATIC REFERENCE TO A NON-STATIC METHOD:
-         * 
-         * just make an instance of the class an call the non-static method that way
-         */
+        //FIX OF CANNOT MAKE A STATIC REFERENCE TO A NON-STATIC METHOD:
+        // just make an instance of the class an call the non-static method that way
 
-        b1.switchMenu();
-        
+        //b1.switchMenu();
+        b1.bankBalance();
     }
 
     @Override
     public String toString() {
         return "";
     }
-
+    /* 
     public void switchMenu(){
 
 
         Scanner hauptScanner = new Scanner(System.in);
         switch (hauptScanner.next().toLowerCase()){
 
-            case "H":
+            case "2":
                 helpMenu();   
                 break;
             
-            case "M":
-                moneyInMonth();
+            case "m":
+                moneyINeed();
                 break;
         }
 
-        hauptScanner.close();                        //if u don't close the scanner u'll get the rescource leak error
-    }
+        //hauptScanner.close();                        //if u don't close the scanner u'll get the rescource leak error
+    } */
 
     public Balance(){
 
-        switchMenu();
-
+        //switchMenu();
+        moneyInMonth();
 
     }
 
-    public Scanner userInput(){
-        reader = new Scanner(System.in);
+    static Scanner userInput(){
+        Scanner reader = new Scanner(System.in);
         return reader;
     }
 
@@ -108,7 +103,7 @@ import java.util.Scanner;
 
 
             System.out.println("What do u wanna buy?");
-            object = userInput().nextLine();
+            object = userInput().toString();
             System.out.println("You wanna buy: "+ object+ ".\n");
 
             System.out.println("How much does it cost? ");
